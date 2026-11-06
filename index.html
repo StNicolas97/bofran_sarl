@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BOFRAN Sarl · Plomberie, travaux publics et équipement industriel à Douala</title>
+<meta name="description" content="BOFRAN Sarl, Douala : plomberie industrielle et de bâtiment, travaux publics, équipement industriel, études et réalisations pour les entreprises et administrations au Cameroun.">
+<meta property="og:title" content="BOFRAN Sarl · Plomberie, travaux publics, équipement industriel">
+<meta property="og:description" content="Études, installation et maintenance de réseaux d'eau, d'équipements industriels et d'ouvrages de travaux publics au Cameroun.">
+<meta property="og:image" content="bofran-logo.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Mise en page : site vitrine d'une page ; bandes brun BOFRAN alternées avec des sections claires,
+   orange du logo pour les appels à l'action, filet bleu repris du papier à en-tête */
+:root {
+  --bg: #f5f4f2;
+  --surface: #ffffff;
+  --ink: #1f150d;
+  --muted: #6a5d53;
+  --line: #e4ddd6;
+  --dark: #2b1d12;
+  --dark-2: #3d2a1b;
+  --dark-soft: #f2ebe4;
+  --accent: #e0602d;
+  --accent-ink: #ffffff;
+  --gold: #f2b705;
+  --teal: #45a6bf;
+  --icon: #8a3e18;
+  --on-dark: #f7f0ea;
+  --on-dark-muted: #cbb9aa;
+  --display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #130d08; --surface: #1d140d; --ink: #f1e9e2; --muted: #b3a294; --line: #3a2a1d;
+    --dark: #0d0805; --dark-2: #241810; --dark-soft: #2a1d13; --accent: #f07a45; --accent-ink: #1a0b03;
+    --icon: #f5b07e; --on-dark: #f1e9e2; --on-dark-muted: #ad9a8a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #130d08; --surface: #1d140d; --ink: #f1e9e2; --muted: #b3a294; --line: #3a2a1d;
+  --dark: #0d0805; --dark-2: #241810; --dark-soft: #2a1d13; --accent: #f07a45; --accent-ink: #1a0b03;
+  --icon: #f5b07e; --on-dark: #f1e9e2; --on-dark-muted: #ad9a8a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[v-cloak] { display: none; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--body); }
+img { max-width: 100%; }
+a { color: inherit; }
+.band { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.inner { max-width: 1120px; margin: 0 auto; }
+.inner > * { min-width: 0; }
+h1, h2, h3 { font-family: var(--display); margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(28px, 4.4vw, 42px); font-weight: 800; line-height: 1.08; letter-spacing: -.015em; }
+.kicker { font: 700 12.5px var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 10px; }
+.kicker::before { content: ""; width: 22px; height: 2px; background: currentColor; }
+.section { padding-block: 72px; display: grid; gap: 34px; }
+.section-head { display: grid; gap: 10px; max-width: 680px; }
+.section-head p { margin: 0; color: var(--muted); font-size: 17px; }
+.dark { background: var(--dark); color: var(--on-dark); }
+.dark .section-head p { color: var(--on-dark-muted); }
+
+/* en-tête */
+header.band { position: sticky; top: 0; z-index: 20; background: var(--dark); color: var(--on-dark); padding-top: env(safe-area-inset-top, 0px); border-bottom: 3px solid var(--teal); }
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 10px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo-tile { background: #fff; border-radius: 8px; padding: 4px 6px; display: grid; place-items: center; flex: none; }
+.logo-tile img { height: 48px; width: auto; display: block; }
+.brand-name { font: 800 19px/1 var(--display); letter-spacing: .03em; }
+.brand-sub { display: block; font: 500 11.5px var(--body); letter-spacing: .1em; text-transform: uppercase; color: var(--on-dark-muted); margin-top: 5px; }
+.links { display: flex; gap: 24px; font-weight: 600; font-size: 14.5px; }
+.links a { text-decoration: none; color: var(--on-dark-muted); }
+.links a:hover { color: var(--on-dark); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: 700 15.5px/1 var(--body); text-decoration: none; border-radius: 6px; padding: 15px 20px; border: 2px solid transparent; cursor: pointer; }
+.btn.accent { background: var(--accent); color: var(--accent-ink); }
+.btn.accent:hover { filter: brightness(1.07); }
+.btn.outline { border-color: rgba(255,255,255,.4); color: var(--on-dark); background: transparent; }
+.btn.outline:hover { border-color: var(--on-dark); }
+.btn.small { padding: 11px 16px; font-size: 14.5px; }
+.btn:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+/* bandeau d'accueil */
+.hero { background: var(--dark); color: var(--on-dark); padding-block: 56px 0; position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: 0; opacity: .5;
+  background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 48px 48px; -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent); mask-image: linear-gradient(to bottom, #000 40%, transparent); }
+.hero-grid { position: relative; display: grid; grid-template-columns: 1.3fr .7fr; gap: 48px; align-items: center; }
+.hero h1 { font-size: clamp(34px, 5.6vw, 60px); font-weight: 800; line-height: 1.02; letter-spacing: -.025em; margin-top: 18px; }
+.hero h1 span { color: var(--gold); }
+.hero .lead { font-size: 18.5px; color: var(--on-dark-muted); max-width: 58ch; margin: 22px 0 30px; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.logo-card { background: #fff; border-radius: 14px; padding: 26px; box-shadow: 0 20px 60px rgba(0,0,0,.35); justify-self: end; max-width: 360px; width: 100%; }
+.logo-card img { display: block; width: 100%; height: auto; }
+.stats { position: relative; margin-top: 56px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,.14); }
+.stat { padding: 26px 20px 30px 0; display: grid; gap: 4px; }
+.stat + .stat { padding-left: 20px; border-left: 1px solid rgba(255,255,255,.14); }
+.stat b { font: 800 clamp(28px, 3.8vw, 40px)/1 var(--display); color: var(--on-dark); font-variant-numeric: tabular-nums; }
+.stat span { font-size: 14.5px; color: var(--on-dark-muted); }
+
+/* expertises */
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.exp { background: var(--surface); padding: 28px 26px; display: grid; gap: 12px; align-content: start; }
+.exp .ico { width: 56px; height: 56px; border-radius: 10px; background: var(--dark-soft); color: var(--icon); display: grid; place-items: center; }
+.exp .ico svg { width: 30px; height: 30px; }
+.exp h3 { font-size: 20px; font-weight: 700; line-height: 1.2; }
+.exp p { margin: 0; color: var(--muted); font-size: 15.5px; }
+.exp ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: 14.5px; }
+.exp li { display: flex; gap: 8px; }
+.exp li::before { content: ""; flex: none; width: 6px; height: 6px; margin-top: 9px; background: var(--accent); }
+
+/* secteurs */
+.sectors { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.sector { border: 1px solid rgba(255,255,255,.12); border-radius: 8px; padding: 22px; display: grid; gap: 6px; background: var(--dark-2); }
+.sector b { font: 700 18px var(--display); }
+.sector span { color: var(--on-dark-muted); font-size: 15px; }
+.refs { margin: 0; color: var(--on-dark-muted); font-size: 15px; }
+
+/* méthode */
+.method { display: grid; grid-template-columns: repeat(5, 1fr); }
+.mstep { padding: 0 18px 0 0; display: grid; gap: 8px; align-content: start; }
+.mstep .n { font: 800 15px var(--display); color: var(--accent); display: flex; align-items: center; gap: 10px; }
+.mstep .n::after { content: ""; flex: 1; height: 2px; background: var(--line); }
+.mstep:last-child .n::after { display: none; }
+.mstep b { font: 700 18px/1.25 var(--display); }
+.mstep p { margin: 0; color: var(--muted); font-size: 15px; }
+.deliv { font-size: 13px; font-weight: 600; color: var(--icon); background: var(--dark-soft); border-radius: 4px; padding: 4px 8px; justify-self: start; }
+
+/* engagements */
+.commit { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.c { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--accent); padding: 22px; display: grid; gap: 8px; align-content: start; }
+.c b { font: 700 18px var(--display); }
+.c p { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* contact */
+.contact { display: grid; grid-template-columns: .85fr 1.15fr; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.contact > * { min-width: 0; }
+.contact-side { background: var(--dark); color: var(--on-dark); padding: 32px; display: grid; gap: 20px; align-content: start; }
+.contact-side h3 { font-size: 24px; font-weight: 800; }
+.contact-side p { margin: 0; color: var(--on-dark-muted); }
+.line { display: grid; gap: 4px; }
+.line small { font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--on-dark-muted); }
+.line b, .line a { font-size: 17px; font-weight: 700; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; text-decoration: none; }
+.line a:hover { color: var(--gold); }
+.phones { display: grid; gap: 2px; }
+.form { padding: 32px; display: grid; gap: 16px; }
+.field { display: grid; gap: 6px; }
+.field label { font-weight: 600; font-size: 14.5px; }
+.req { color: var(--accent); }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+select, input[type="text"], input[type="email"], input[type="tel"], textarea { width: 100%; font: 400 16px var(--body); color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 12px; }
+textarea { min-height: 120px; resize: vertical; }
+.err { color: #c0392b; font-size: 14px; margin: 0; }
+.ok { background: var(--dark-soft); border-left: 3px solid var(--accent); padding: 14px 16px; border-radius: 4px; display: grid; gap: 10px; }
+.ok p { margin: 0; }
+.ok .btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.ok .btn.ghost { border-color: var(--line); color: var(--ink); background: var(--surface); }
+.hint { font-size: 13.5px; color: var(--muted); margin: 0; }
+
+footer.band { background: var(--dark); color: var(--on-dark-muted); padding-block: 40px calc(40px + env(safe-area-inset-bottom, 0px)); font-size: 14.5px; border-top: 3px solid var(--teal); }
+.foot { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 28px; }
+.foot b { display: block; color: var(--on-dark); margin-bottom: 8px; font-family: var(--display); }
+.foot p { margin: 0; }
+.foot a { text-decoration: none; }
+.legal { margin-top: 28px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.1); display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 13px; }
+
+@media (max-width: 960px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .logo-card { justify-self: start; max-width: 260px; padding: 18px; }
+  .grid3, .sectors { grid-template-columns: 1fr 1fr; }
+  .method { grid-template-columns: 1fr; gap: 22px; }
+  .mstep .n::after { display: none; }
+  .commit { grid-template-columns: 1fr 1fr; }
+  .contact { grid-template-columns: 1fr; }
+  .links { display: none; }
+}
+@media (max-width: 600px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stat:nth-child(3) { padding-left: 0; border-left: 0; }
+  .stat:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.14); }
+  .grid3, .sectors, .commit, .row2, .foot { grid-template-columns: 1fr; }
+  .section { padding-block: 52px; }
+  .form, .contact-side { padding: 22px; }
+  .nav .btn { padding: 10px 12px; font-size: 13.5px; }
+  .brand-sub { display: none; }
+  .logo-tile img { height: 40px; }
+}
+</style>
+</head>
+<body>
+<div id="app" v-cloak>
+  <header class="band">
+    <div class="inner nav">
+      <a class="brand" href="#accueil">
+        <span class="logo-tile"><img src="bofran-logo-header.png" alt="Logo BOFRAN Sarl" width="53" height="48"></span>
+        <span><span class="brand-name">{{ cfg.name }}</span><span class="brand-sub">{{ cfg.tagline }}</span></span>
+      </a>
+      <nav class="links" aria-label="Menu">
+        <a href="#expertises">Expertises</a><a href="#secteurs">Secteurs</a><a href="#methode">Méthode</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="btn accent small" href="#contact">Demander une étude</a>
+    </div>
+  </header>
+
+  <main>
+  <section class="hero band" id="accueil">
+    <div class="inner">
+      <div class="hero-grid">
+        <div>
+          <span class="kicker">Douala · Cameroun · Depuis {{ cfg.since }}</span>
+          <h1>Plomberie, travaux publics et équipement industriel, <span>de l'étude à la réalisation.</span></h1>
+          <p class="lead">{{ cfg.name }} étudie, réalise et entretient les réseaux d'eau, les équipements industriels et les ouvrages de travaux publics des entreprises et des administrations au Cameroun.</p>
+          <div class="cta">
+            <a class="btn accent" href="#contact">Demander une étude ou un devis</a>
+            <a class="btn outline" href="#expertises">Nos expertises</a>
+          </div>
+        </div>
+        <!-- <div class="logo-card"><img src="bofran-logo.png" alt="BOFRAN Sarl, plomberie, travaux publics, équipement industriel, études et réalisations des travaux divers, commerce général" width="1098" height="996"></div> -->
+      </div>
+      <div class="stats">
+        <div class="stat" v-for="s in cfg.stats" :key="s.label"><b>{{ s.value }}</b><span>{{ s.label }}</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="expertises">
+    <div class="inner section">
+      <div class="section-head">
+        <span class="kicker">Nos expertises</span>
+        <h2>Un seul interlocuteur pour vos réseaux, vos équipements et vos ouvrages</h2>
+        <p>Nous prenons en charge l'étude, la fourniture du matériel, la réalisation, les essais et la maintenance, avec nos propres équipes.</p>
+      </div>
+      <div class="grid3">
+        <article class="exp" v-for="e in cfg.expertises" :key="e.title">
+          <div class="ico" v-html="icons[e.icon]"></div>
+          <h3>{{ e.title }}</h3>
+          <p>{{ e.desc }}</p>
+          <ul><li v-for="i in e.items" :key="i">{{ i }}</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band dark" id="secteurs">
+    <div class="inner section">
+      <div class="section-head">
+        <span class="kicker">Nos clients</span>
+        <h2>Au service des entreprises et des maîtres d'ouvrage</h2>
+        <p>Des installations dimensionnées pour un fonctionnement continu, avec des interventions planifiées pour ne pas interrompre votre activité.</p>
+      </div>
+      <div class="sectors">
+        <div class="sector" v-for="s in cfg.sectors" :key="s.name"><b>{{ s.name }}</b><span>{{ s.text }}</span></div>
+      </div>
+      <p class="refs">Références de chantiers et attestations de bonne exécution communiquées sur demande.</p>
+    </div>
+  </section>
+
+  <section class="band" id="methode">
+    <div class="inner section">
+      <div class="section-head">
+        <span class="kicker">Notre méthode</span>
+        <h2>De l'étude à la réception, chaque étape est documentée</h2>
+      </div>
+      <div class="method">
+        <div class="mstep" v-for="(m, i) in method" :key="m.t">
+          <span class="n">{{ String(i + 1).padStart(2, "0") }}</span>
+          <b>{{ m.t }}</b>
+          <p>{{ m.d }}</p>
+          <span class="deliv">{{ m.out }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="inner section" style="padding-top: 0">
+      <div class="section-head">
+        <span class="kicker">Nos engagements</span>
+        <h2>Ce que nous garantissons sur chaque chantier</h2>
+      </div>
+      <div class="commit">
+        <div class="c" v-for="c in commitments" :key="c.t"><b>{{ c.t }}</b><p>{{ c.d }}</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="contact" style="background: var(--dark-soft)">
+    <div class="inner section">
+      <div class="section-head">
+        <span class="kicker">Contact</span>
+        <h2>Parlons de votre projet</h2>
+        <p>Décrivez votre besoin : nous vous recontactons sous {{ cfg.responseTime }} pour organiser une visite technique.</p>
+      </div>
+      <div class="contact">
+        <aside class="contact-side">
+          <h3>{{ cfg.name }}</h3>
+          <p>Études, appels d'offres, travaux, fourniture de matériel et contrats de maintenance.</p>
+          <div class="line"><small>Téléphone</small>
+            <div class="phones"><a v-for="p in cfg.phones" :key="p.intl" :href="'tel:+' + p.intl">{{ p.display }}</a></div>
+          </div>
+          <div class="line"><small>E-mail</small><a :href="'mailto:' + cfg.email">{{ cfg.email }}</a></div>
+          <div class="line"><small>Adresse postale</small><b>{{ cfg.address }}</b></div>
+          <div class="line"><small>Horaires</small><b>{{ cfg.hours }}</b></div>
+        </aside>
+        <form class="form" @submit.prevent="send" novalidate>
+          <div class="row2">
+            <div class="field"><label for="f-company">Entreprise ou organisme <span class="req">*</span></label><input id="f-company" type="text" v-model.trim="form.company" autocomplete="organization"></div>
+            <div class="field"><label for="f-name">Nom et fonction <span class="req">*</span></label><input id="f-name" type="text" v-model.trim="form.name" placeholder="Ex. Directeur technique"></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="f-email">E-mail professionnel <span class="req">*</span></label><input id="f-email" type="email" v-model.trim="form.email" autocomplete="email"></div>
+            <div class="field"><label for="f-phone">Téléphone</label><input id="f-phone" type="tel" v-model.trim="form.phone" autocomplete="tel"></div>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="f-type">Type de besoin</label>
+              <select id="f-type" v-model="form.type"><option v-for="t in requestTypes" :key="t" :value="t">{{ t }}</option></select>
+            </div>
+            <div class="field">
+              <label for="f-sector">Domaine</label>
+              <select id="f-sector" v-model="form.sector">
+                <option v-for="e in cfg.expertises" :key="e.title" :value="e.title">{{ e.title }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="f-site">Ville du site</label><input id="f-site" type="text" v-model.trim="form.site" placeholder="Ex. Douala, zone de Bassa"></div>
+            <div class="field">
+              <label for="f-when">Échéance</label>
+              <select id="f-when" v-model="form.when"><option>Urgent (moins d'un mois)</option><option>1 à 3 mois</option><option>3 à 6 mois</option><option>Plus de 6 mois</option></select>
+            </div>
+          </div>
+          <div class="field"><label for="f-desc">Description du projet <span class="req">*</span></label><textarea id="f-desc" v-model.trim="form.desc" placeholder="Nature des travaux, taille du site, contraintes (activité continue, accès, délais…)"></textarea></div>
+          <p class="err" v-if="error">{{ error }}</p>
+          <div class="ok" v-if="sent">
+            <p><b>Votre demande est prête.</b> Choisissez comment l'envoyer :</p>
+            <div class="btns">
+              <a class="btn accent small" :href="mailLink">Envoyer par e-mail</a>
+              <a class="btn ghost small" :href="waLink" target="_blank" rel="noopener">Envoyer par WhatsApp</a>
+            </div>
+          </div>
+          <button class="btn accent" type="submit" v-if="!sent">Envoyer ma demande</button>
+          <p class="hint">Vos informations servent uniquement à répondre à votre demande.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="band">
+    <div class="inner">
+      <div class="foot">
+        <div><b>{{ cfg.name }}</b><p>Plomberie, travaux publics, équipement industriel, études et réalisations des travaux divers, commerce général.</p></div>
+        <div><b>Contact</b><p v-for="p in cfg.phones" :key="p.intl">{{ p.display }}</p><p><a :href="'mailto:' + cfg.email">{{ cfg.email }}</a></p></div>
+        <div><b>Adresse</b><p>{{ cfg.address }}</p></div>
+      </div>
+      <div class="legal"><span>© {{ year }} {{ cfg.name }}</span><span>N° RC : {{ cfg.rc }}</span><span>N° contribuable : {{ cfg.taxId }}</span></div>
+    </div>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.4.21/dist/vue.global.prod.js"></script>
+<script>
+// ---- Informations de la société (reprises du papier à en-tête) ----
+const CONFIG = {
+  name: "BOFRAN Sarl",
+  tagline: "Plomberie · Travaux publics · Équipement industriel",
+  since: "2012",
+  phones: [
+    { display: "(+237) 33 42 92 06", intl: "23733429206" },
+    { display: "(+237) 699 84 86 70", intl: "237699848670" },
+    { display: "(+237) 678 26 17 57", intl: "237678261757" }
+  ],
+  whatsapp: "237699848670",                 // numéro WhatsApp : à confirmer
+  email: "franbosarlakwa2010@yahoo.fr",
+  address: "BP 1128 Douala, Cameroun",
+  hours: "Lun–Ven 7h30–17h30 · Sam 8h–13h",  // à confirmer
+  responseTime: "48 heures ouvrées",
+  rc: "RC/DLA/2012/B/1120",
+  taxId: "M031200041422 Y",
+  // Chiffres clés : remplacez XX par vos vrais chiffres
+  stats: [
+    { value: "2012", label: "année de création" },
+    { value: "60+", label: "chantiers réalisés" },
+    { value: "10", label: "techniciens et ingénieurs" },
+    { value: "20+", label: "clients entreprises" }
+  ],
+  expertises: [
+    { icon: "pipe", title: "Plomberie industrielle et bâtiment", desc: "Réseaux d'eau froide, d'eau chaude et d'évacuation pour usines, immeubles, hôtels et hôpitaux.", items: ["Acier, inox, PEHD, PPR, PVC pression", "Colonnes montantes et distribution", "Appareils sanitaires"] },
+    { icon: "road", title: "Travaux publics", desc: "Réseaux enterrés et ouvrages pour les sites, les lotissements et les collectivités.", items: ["Adduction d'eau potable", "Assainissement et drainage", "Terrassement et génie civil associé"] },
+    { icon: "pump", title: "Équipement industriel", desc: "Fourniture, installation et mise en service d'équipements de pompage et de stockage.", items: ["Pompes et surpresseurs", "Cuves, bâches et châteaux d'eau", "Armoires de commande"] },
+    { icon: "plan", title: "Études et réalisations", desc: "Études techniques avant travaux, pour un projet dimensionné et chiffré au plus juste.", items: ["Relevés et diagnostic", "Plans et notes de calcul", "Dossiers d'appel d'offres"] },
+    { icon: "box", title: "Commerce général", desc: "Fourniture de matériel de plomberie et d'équipements pour vos chantiers et vos services techniques.", items: ["Tubes, raccords, robinetterie", "Pompes et accessoires", "Approvisionnement sur commande"] },
+    { icon: "wrench", title: "Maintenance et contrats", desc: "Entretien préventif et dépannage avec délais d'intervention convenus au contrat.", items: ["Visites programmées", "Dépannage sur site", "Rapports d'intervention"] }
+  ],
+  sectors: [
+    { name: "Industrie et agroalimentaire", text: "Usines, brasseries, sites de production : eau de process et réseaux techniques." },
+    { name: "Hôtellerie et santé", text: "Hôtels, hôpitaux, cliniques : eau chaude collective et réseaux fiables." },
+    { name: "Immobilier et BTP", text: "Immeubles et chantiers neufs, en lot plomberie pour les entreprises générales." },
+    { name: "Administrations et collectivités", text: "Bâtiments publics et réseaux, en réponse aux appels d'offres." },
+    { name: "Commerce et logistique", text: "Centres commerciaux, entrepôts, bases logistiques." },
+    { name: "Particuliers exigeants", text: "Villas et résidences : installations complètes sur plans." }
+  ]
+};
+
+const ICONS = {
+  pipe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h8a4 4 0 0 1 4 4v9"/><path d="M3 4v8M11 17h8M19 13v8"/></svg>',
+  road: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3 3 21M17 3l4 18"/><path d="M12 4v3M12 10.5v3M12 17v3"/></svg>',
+  pump: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="13" r="6"/><path d="M10 13l3-3M16 13h6M2 13h2M6 21h8"/></svg>',
+  plan: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5l6-2 6 2 6-2v16l-6 2-6-2-6 2z"/><path d="M9 3v16M15 5v16"/></svg>',
+  box: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>',
+  wrench: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4.5 4.5 0 0 0 5.6 5.6L21 13l-8.5 8.5a2.1 2.1 0 0 1-3-3L18 10"/><path d="M14.5 6.5 16 5l3 3-1.5 1.5"/></svg>'
+};
+
+Vue.createApp({
+  data() {
+    return {
+      cfg: CONFIG,
+      icons: ICONS,
+      year: new Date().getFullYear(),
+      method: [
+        { t: "Visite et relevé", d: "Un technicien visite le site, relève l'existant et précise vos besoins.", out: "Rapport de visite" },
+        { t: "Étude et dimensionnement", d: "Calcul des débits, pressions et diamètres, choix des matériaux.", out: "Plans et notes de calcul" },
+        { t: "Offre et planning", d: "Offre détaillée par poste, planning des travaux adapté à votre activité.", out: "Devis quantitatif" },
+        { t: "Travaux et essais", d: "Réalisation par nos équipes, essais de pression et désinfection des réseaux.", out: "PV d'essais" },
+        { t: "Réception et suivi", d: "Mise en service, formation de vos équipes, maintenance si souhaitée.", out: "DOE et PV de réception" }
+      ],
+      commitments: [
+        { t: "Sécurité sur site", d: "Équipes formées, équipements de protection et respect des règles HSE de votre site." },
+        { t: "Matériaux et normes", d: "Matériel de marques reconnues, mise en œuvre selon les règles de l'art." },
+        { t: "Délais tenus", d: "Un planning validé au départ et un chef de chantier responsable de son suivi." },
+        { t: "Dossier complet", d: "Plans de récolement, procès-verbaux d'essais et dossier des ouvrages exécutés (DOE) remis à la fin." }
+      ],
+      requestTypes: ["Étude et travaux neufs", "Rénovation d'un réseau existant", "Fourniture de matériel", "Contrat de maintenance", "Dépannage sur site", "Réponse à un appel d'offres"],
+      form: { company: "", name: "", email: "", phone: "", type: "Étude et travaux neufs", sector: CONFIG.expertises[0].title, site: "", when: "1 à 3 mois", desc: "" },
+      error: "",
+      sent: false
+    };
+  },
+  computed: {
+    message() {
+      const f = this.form;
+      return [
+        "Demande : " + f.type + " (" + f.sector + ")",
+        "Entreprise : " + f.company,
+        "Contact : " + f.name + (f.phone ? " · " + f.phone : "") + " · " + f.email,
+        (f.site ? "Site : " + f.site + " · " : "") + "Échéance : " + f.when,
+        "",
+        f.desc
+      ].join("\n");
+    },
+    mailLink() { return "mailto:" + this.cfg.email + "?subject=" + encodeURIComponent("Demande d'étude · " + this.form.company) + "&body=" + encodeURIComponent(this.message); },
+    waLink() { return "https://wa.me/" + this.cfg.whatsapp + "?text=" + encodeURIComponent(this.message); }
+  },
+  watch: { form: { deep: true, handler() { this.sent = false; } } },
+  methods: {
+    send() {
+      const f = this.form;
+      if (!f.company || !f.name || !f.desc) { this.error = "Indiquez l'entreprise, votre nom et une description du projet."; return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email)) { this.error = "Indiquez une adresse e-mail valide pour recevoir notre réponse."; return; }
+      this.error = "";
+      this.sent = true;
+    }
+  }
+}).mount("#app");
+</script>
+</body>
+</html>
